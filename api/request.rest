@@ -1,0 +1,70 @@
+
+GET  http://localhost:5000/tasks
+
+###
+
+
+POST http://localhost:5000/tasks/new
+Content-Type: application/json
+
+{
+    "text" : "Order pizza"
+}
+
+###
+
+
+DELETE http://localhost:5000/tasks/delete/61c846a8b2284f2c72f84af4
+
+###
+
+PUT http://localhost:5000/tasks/complete/61c84a49b2284f2c72f84af7
+
+###
+
+
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+    "username": "Tanmoy",
+    "password": "pass123",
+    "validator":"false"
+}
+
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "username": "ashfaq",
+    "password": "pass123"
+}
+
+###
+
+GET http://localhost:5000/logout
+
+###
+
+POST http://localhost:5000/product
+Content-Type: application/json
+
+{
+    "product_name": "Milk",
+    "product_type": "grossary",
+    "product_price": "55"
+}
+
+###
+
+GET http://localhost:5000/product/notvalidated
+
+###
+
+GET http://localhost:5000/product/validate/61c9a1f786a8560016fe54ee
+
+###
+
+GET http://localhost:5000/product/validated
