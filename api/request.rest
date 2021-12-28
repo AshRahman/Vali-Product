@@ -38,7 +38,7 @@ POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "username": "ashfaq",
+    "username": "Tanmoy",
     "password": "pass123"
 }
 
@@ -52,9 +52,9 @@ POST http://localhost:5000/product
 Content-Type: application/json
 
 {
-    "product_name": "Milk",
-    "product_type": "grossary",
-    "product_price": "55"
+    "product_name": "Broom",
+    "product_type": "cleaning-supply",
+    "product_price": "120"
 }
 
 ###
@@ -63,7 +63,7 @@ GET http://localhost:5000/product/notvalidated
 
 ###
 
-GET http://localhost:5000/product/validate/61c9a1f786a8560016fe54ee
+GET http://localhost:5000/product/validate/61c9a5cf35977c80e94fbd7b
 
 ###
 

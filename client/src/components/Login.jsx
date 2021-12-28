@@ -52,7 +52,7 @@ export default function Login() {
               navigator("/dashboard");
             }
           } else {
-            console.log("Yoolo");
+            console.log("Yolo");
           }
         }}
       >

@@ -90,7 +90,7 @@ app.post("/login", async (req, res) => {
           username: user.username,
           validator: user.validator
         };
-        // res.cookie('userData',resUser,{maxAge: 360000});
+        res.cookie('userData',resUser,{maxAge: 360000});
         res.status(200).json(resUser);
       }
       else{
@@ -104,15 +104,6 @@ app.post("/login", async (req, res) => {
   });
 
 
-// app.get("/logout",async(req,res)=> {
-//   try{
-//     res.clearCookie('userData');
-//     console.log(req.cookies);
-//   }catch(err){
-//     console.log(err);
-//   }
-// });
-
 
 app.post("/product", async(req, res) =>{
   if(req.cookies === null){
@@ -125,9 +116,9 @@ app.post("/product", async(req, res) =>{
      if (!(product_name && product_price && product_type)) {
       res.status(400).send("All input is required");
     }
-    created_by=req.cookies;
-    creator_name= created_by.userData.username;
-    console.log(created_by.userData.username);
+    creator_name= req.body.username;
+    console.log(creator_name);
+    
 
      const productDetail = await ProductValidation.create({
        product_name: product_name,

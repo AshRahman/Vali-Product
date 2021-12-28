@@ -1,8 +1,8 @@
 import React from "react";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
-import AddProduct from "./AddProduct";
 import ValidateProduct from "./ValidateProduct";
+import ViewProduct from "./ViewProduct";
 
 export default function Dashboard() {
   const navigator = useNavigate();
@@ -19,7 +19,7 @@ export default function Dashboard() {
         Logout
       </button>
       {console.log(user.validator)}
-      {user.validator ? <ValidateProduct /> : <AddProduct />}
+      {user.validator ? <ValidateProduct /> : <ViewProduct />}
     </div>
   );
 }
