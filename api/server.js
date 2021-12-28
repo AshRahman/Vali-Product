@@ -25,10 +25,6 @@ const connection = mongoose.connection;
 connection.once('open', () => {
     console.log("MongoDB connection established");
 });
-//  todo const authorization = (req,res,next)=>{
-//      req.body;
-//      next();
-//  }
 
 app.post("/register", async (req, res) => {
  
@@ -156,10 +152,6 @@ app.get("/product/validated", async(req,res) =>{
 
 app.get("/product/validate/:id",async(req,res)=>{
   var fileId = req.params.id;
-  //var o_id = mongoose.Types.ObjectId(fileId);
-  //console.log(o_id);
-  console.log(fileId);
-
   try{
     await ProductValidation.findOneAndUpdate(
       {
@@ -171,7 +163,6 @@ app.get("/product/validate/:id",async(req,res)=>{
         }
       }
     )
-    // try{
         var valProd = await ProductValidation.findOne({"_id":fileId});
         var votes=Number(valProd.votes);
         console.log(votes);
@@ -188,17 +179,14 @@ app.get("/product/validate/:id",async(req,res)=>{
           console.log("needs more vote");
         }
 
-      //  }catch(err){
-      //    console.log(err);
-      //  }
-
+     
 
   }catch(err){
     console.log(err);
   }
 
 
-  //console.log(showRes);
+  
 })
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);
