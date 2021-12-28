@@ -14,21 +14,25 @@ export default function Login() {
   ) : (
     <div>
       <input
-        type=""
+        type="text"
+        placeholder="User Name"
         name=""
         id=""
         onChange={(event) => {
           setUsername(event.target.value);
         }}
       />
+      <br />
       <input
-        type=""
+        type="password"
+        placeholder="Password"
         name=""
         id=""
         onChange={(event) => {
           setPassword(event.target.value);
         }}
-      />
+      />{" "}
+      <br />
       <button
         onClick={async () => {
           console.log(username, password);
@@ -56,7 +60,7 @@ export default function Login() {
           }
         }}
       >
-        Submit
+        Login
       </button>
     </div>
   );

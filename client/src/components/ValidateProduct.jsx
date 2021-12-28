@@ -2,8 +2,11 @@ import axios from "axios";
 import React from "react";
 import { useEffect, useState } from "react";
 import { ENDPOINT } from "../lib";
+import { useNavigate } from "react-router-dom";
 export default function ValidateProduct() {
   const [products, setProducts] = useState([]);
+  const [buttonState, setButtonState] = useState(false);
+  const navigator = useNavigate();
   useEffect(() => {
     try {
       axios.get(`${ENDPOINT}/product/notvalidated`).then((res) => {
@@ -39,7 +42,10 @@ export default function ValidateProduct() {
                 <td>{product.votes}</td>
                 <td>
                   <button
+                    disabled={buttonState}
                     onClick={async () => {
+                      setButtonState(true);
+                      navigator("/dashboard");
                       await axios.get(
                         `${ENDPOINT}/product/validate/${product._id}`
                       );

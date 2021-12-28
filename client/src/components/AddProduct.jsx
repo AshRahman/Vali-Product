@@ -8,6 +8,7 @@ export default function AddProduct() {
   const [product_name, setProduct_name] = useState("");
   const [product_type, setProduct_type] = useState("");
   const [product_price, setProduct_price] = useState("");
+
   const navigator = useNavigate();
   const user = JSON.parse(Cookies.get("user"));
   return (
@@ -22,25 +23,32 @@ export default function AddProduct() {
       </button>
       <input
         type="text"
+        placeholder="Product Name"
         onChange={(event) => {
           setProduct_name(event.target.value);
         }}
-      />
+      />{" "}
+      <br />
       <input
         type="text"
+        placeholder="Product Type"
         onChange={(event) => {
           setProduct_type(event.target.value);
         }}
       />
+      <br />
       <input
         type="text"
+        placeholder="Product Price"
         onChange={(event) => {
           setProduct_price(event.target.value);
         }}
       />
+      <br />
       <button
         onClick={async () => {
           const username = user.username;
+
           console.log(username);
           if (
             (product_name !== null) &
